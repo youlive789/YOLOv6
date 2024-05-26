@@ -285,6 +285,8 @@ class TrainValDataset(Dataset):
 
             else:
                 ratio = self.img_size / max(h0, w0)
+            if ratio == 0.0:
+                ratio = 1.0
             if ratio != 1:
                     im = cv2.resize(
                         im,
